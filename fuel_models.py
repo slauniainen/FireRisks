@@ -29,7 +29,7 @@ def FM_deDios(D, fm0, fm1, tau):
     return fm
 
 
-def FM_equilibration(T, RH, Prec, dt, tau, fm_max=None, Prec_lim=1.0):
+def FM_equilibration(T, RH, Prec, dt, tau, fm_max=None, Prec_lim=1.0, Figs=True):
     """
     Based on Catchpole et al. 2001 Int. J. Wildl. Fire &
         Matthews 2014 Int. J. Wildl. Fire with heuristic impact of precipitation
@@ -90,15 +90,17 @@ def FM_equilibration(T, RH, Prec, dt, tau, fm_max=None, Prec_lim=1.0):
             fm[k] = EMC[k] + (fm[k-1] - EMC[k])*np.exp(-dt/tau)
         
     #-- for testing
-    fig, ax = plt.subplots(2,1)
-    ax[0].set_title('euilibration')
-    ax[0].plot(T, 'r-'); ax[1].set_ylabel('T (degC)')
-    ax0b = ax[0].twinx()
-    ax0b.plot(RH, 'k-'); ax0b.set_ylabel('RH (%)')
-    ax[1].plot(fm, 'r-', label='fm, tau=%.1f' %tau)
-    ax[1].plot(EMC, 'k-', label='EMC')
-    ax[1].set_ylabel('fm (g g-1)')
-    #ax[2].plot(c)
+    if Figs:
+        fig, ax = plt.subplots(2,1)
+        ax[0].set_title('equilibration')
+        ax[0].plot(T, 'r-'); ax[0].set_ylabel('T (degC)')
+        ax0b = ax[0].twinx()
+        ax0b.plot(RH, 'k-'); ax0b.set_ylabel('RH (%)')
+        ax[1].plot(fm, 'r-', label='fm, tau=%.1f' %tau)
+        ax[1].plot(EMC, 'k-', label='EMC')
+        ax[1].set_ylabel('fm (g g-1)')
+        ax[1].legend(fontsize=8)
+
     return fm, EMC
 
 def FM_catchpole_modified(T, RH, Prec, dt, tau, Prec_lim):
