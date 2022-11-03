@@ -1,0 +1,161 @@
+% fuel moisture papers / Samuli 30.8.2022
+
+@article{catchpole2001estimating,
+  title={Estimating fuel response time and predicting fuel moisture content from field data},
+  author={Catchpole, EA and Catchpole, WR and Viney, NR and McCaw, WL and Marsden-Smedley, JB},
+  journal={International Journal of Wildland Fire},
+  volume={10},
+  number={2},
+  pages={215--222},
+  year={2001},
+  publisher={CSIRO Publishing}
+}
+
+@article{deDios2015semi,
+  title={A semi-mechanistic model for predicting the moisture content of fine litter},
+  author={de Dios, V{\'\i}ctor Resco and Fellows, Aaron W and Nolan, Rachael H and Boer, Matthias M and Bradstock, Ross A and Domingo, Francisco and Goulden, Michael L},
+  journal={Agricultural and Forest Meteorology},
+  volume={203},
+  pages={64--73},
+  year={2015},
+  publisher={Elsevier}
+}
+
+@article{gonzalez2009construction,
+  title={Construction of empirical models for predicting Pinus sp. dead fine fuel moisture in NW Spain. I: Response to changes in temperature and relative humidity},
+  author={Gonz{\'a}lez, Ana Dar{\'\i}a Ruiz and Hidalgo, Jose Antonio Vega and Gonz{\'a}lez, Juan Gabriel {\'A}lvarez},
+  journal={International Journal of Wildland Fire},
+  volume={18},
+  number={1},
+  pages={71--83},
+  year={2009},
+  publisher={CSIRO Publishing}
+}
+
+@article{masinda2021prediction,
+  title={Prediction model of moisture content of dead fine fuel in forest plantations on Maoer Mountain, Northeast China},
+  author={Masinda, Maombi Mbusa and Li, Fei and Liu, Qi and Sun, Long and Hu, Tongxin},
+  journal={Journal of Forestry Research},
+  volume={32},
+  number={5},
+  pages={2023--2035},
+  year={2021},
+  publisher={Springer}
+}
+
+@article{matthews2013dead,
+  title={Dead fuel moisture research: 1991--2012},
+  author={Matthews, Stuart},
+  journal={International Journal of Wildland Fire},
+  volume={23},
+  number={1},
+  pages={78--92},
+  year={2013},
+  publisher={CSIRO Publishing}
+}
+
+@article{matthews2006process,
+  title={A process-based model of fine fuel moisture},
+  author={Matthews, Stuart},
+  journal={International Journal of Wildland Fire},
+  volume={15},
+  number={2},
+  pages={155--168},
+  year={2006},
+  publisher={CSIRO Publishing}
+}
+
+@article{matthews2006next,
+  title={A next-generation fuel moisture model for fire behaviour prediction},
+  author={Matthews, S and McCaw, WL},
+  journal={Forest Ecology and Management},
+  number={234},
+  pages={S91},
+  year={2006}
+}
+
+@article{nelson2000prediction,
+  title={Prediction of diurnal change in 10-h fuel stick moisture content},
+  author={Nelson Jr, Ralph M},
+  journal={Canadian Journal of Forest Research},
+  volume={30},
+  number={7},
+  pages={1071--1087},
+  year={2000},
+  publisher={NRC Research Press Ottawa, Canada}
+}
+
+@article{nelson1984method,
+  title={A method for describing equilibrium moisture content of forest fuels},
+  author={Nelson Jr, Ralph M},
+  journal={Canadian Journal of Forest Research},
+  volume={14},
+  number={4},
+  pages={597--600},
+  year={1984},
+  publisher={NRC Research Press Ottawa, Canada}
+}
+
+@article{pook1993variation,
+  title={Variation of live and dead fine fuel moisture in Pinus radiata plantations of the Australian-Capital-Territory},
+  author={Pook, EW and Gill, AM},
+  journal={International Journal of Wildland Fire},
+  volume={3},
+  number={3},
+  pages={155--168},
+  year={1993},
+  publisher={CSIRO Publishing}
+}
+
+@article{rakhmatulina2021soil,
+  title={Soil moisture influences on Sierra Nevada dead fuel moisture content and fire risks},
+  author={Rakhmatulina, Ekaterina and Stephens, Scott and Thompson, Sally},
+  journal={Forest Ecology and Management},
+  volume={496},
+  pages={119379},
+  year={2021},
+  publisher={Elsevier}
+}
+
+@article{gonzalez2009construction,
+  title={Construction of empirical models for predicting Pinus sp. dead fine fuel moisture in NW Spain. I: Response to changes in temperature and relative humidity},
+  author={Gonz{\'a}lez, Ana Dar{\'\i}a Ruiz and Hidalgo, Jose Antonio Vega and Gonz{\'a}lez, Juan Gabriel {\'A}lvarez},
+  journal={International Journal of Wildland Fire},
+  volume={18},
+  number={1},
+  pages={71--83},
+  year={2009},
+  publisher={CSIRO Publishing}
+}
+
+@article{schaap1997forest,
+  title={Forest floor water content dynamics in a Douglas fir stand},
+  author={Schaap, MG and Bouten, W and Verstraten, JM},
+  journal={Journal of Hydrology},
+  volume={201},
+  number={1-4},
+  pages={367--383},
+  year={1997},
+  publisher={Elsevier}
+}
+
+@article{sharples2009simple,
+  title={A simple index for assessing fuel moisture content},
+  author={Sharples, Jason J and McRae, Richard HD and Weber, RO and Gill, A Malcom},
+  journal={Environmental Modelling \& Software},
+  volume={24},
+  number={5},
+  pages={637--646},
+  year={2009},
+  publisher={Elsevier}
+}
+
+@article{zhu2013modified,
+  title={A modified model of direct estimation method for fine fuel moisture content prediction by considering crown density},
+  author={Zhu, Jiping and Jia, Jingrui and Wu, Jun and Zhang, Linhe and Yao, Jiajie},
+  journal={Procedia Engineering},
+  volume={62},
+  pages={1015--1022},
+  year={2013},
+  publisher={Elsevier}
+}
