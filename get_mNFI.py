@@ -22,18 +22,18 @@ nodata = 32765.
 def sample_mNFI(maintype=1, sitetype=4, species=('p', 0.9)):
     
     files = {
-            'maintype': r'D:/mVMI/2019\\paatyyppi_vmi1x_1519_M4.tif',
-            'sitetype': r'D:/mVMI/2019\\kasvupaikka_vmi1x_1519_M4.tif',
-            'age': r'D:/mVMI/2019\\ika_vmi1x_1519_M4.tif',
-            'ba': r'D:/mVMI/2019\\ppa_vmi1x_1519_M4.tif',
-            'd50': r'D:/mVMI/2019\\keskilapimitta_vmi1x_1519_M4.tif',
-            'height': r'D:/mVMI/2019\\keskipituus_vmi1x_1519_M4.tif',
-            'vol': r'D:/mVMI/2019\\tilavuus_vmi1x_1519_M4.tif',
-            'vol_p': r'D:/mVMI/2019\\manty_vmi1x_1519_M4.tif',
-            'vol_s': r'D:/mVMI/2019\\kuusi_vmi1x_1519_M4.tif',
-            'fol_p': r'D:/mVMI/2019\\bm_manty_neulaset_vmi1x_1519_M4.tif',
-            'fol_s': r'D:/mVMI/2019\\bm_kuusi_neulaset_vmi1x_1519_M4.tif',
-            'fol_d': r'D:/mVMI/2019\\bm_lehtip_neulaset_vmi1x_1519_M4.tif'
+            'maintype': r'E:/mVMI/2019\\paatyyppi_vmi1x_1519_M4.tif',
+            'sitetype': r'E:/mVMI/2019\\kasvupaikka_vmi1x_1519_M4.tif',
+            'age': r'E:/mVMI/2019\\ika_vmi1x_1519_M4.tif',
+            'ba': r'E:/mVMI/2019\\ppa_vmi1x_1519_M4.tif',
+            'd50': r'E:/mVMI/2019\\keskilapimitta_vmi1x_1519_M4.tif',
+            'height': r'E:/mVMI/2019\\keskipituus_vmi1x_1519_M4.tif',
+            'vol': r'E:/mVMI/2019\\tilavuus_vmi1x_1519_M4.tif',
+            'vol_p': r'E:/mVMI/2019\\manty_vmi1x_1519_M4.tif',
+            'vol_s': r'E:/mVMI/2019\\kuusi_vmi1x_1519_M4.tif',
+            'fol_p': r'E:/mVMI/2019\\bm_manty_neulaset_vmi1x_1519_M4.tif',
+            'fol_s': r'E:/mVMI/2019\\bm_kuusi_neulaset_vmi1x_1519_M4.tif',
+            'fol_d': r'E:/mVMI/2019\\bm_lehtip_neulaset_vmi1x_1519_M4.tif'
             }
     
     raw = {k: [] for k in files.keys()}
