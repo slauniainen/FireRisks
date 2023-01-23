@@ -122,7 +122,8 @@ def percentile_dbh_distr(species, d50, G, age, soil, do):
              [1.3823, 0.6241, 0.0832, 0., 0., -0.0682, 1.0]],
               
             }
-            
+        
+        
         p = np.array(params[species])      
         r = len(p)
 
@@ -132,13 +133,13 @@ def percentile_dbh_distr(species, d50, G, age, soil, do):
         
         if species == 'pine':
             for k in range(r):
-                ln_d[k] = p[k,0] +  np.log(d50) * p[k,1] + np.log(age) * p[k,2] \
-                    + np.log(age/(G+EPS)) * p[k,3] + soil * np.log(age) * p[k,4] + soil * p[k,5]
+                ln_d[k] = p[k,0] +  np.log(d50+EPS) * p[k,1] + np.log(age + EPS) * p[k,2] \
+                    + np.log((age + EPS)/(G+EPS)) * p[k,3] + soil * np.log(age + EPS) * p[k,4] + soil * p[k,5]
         
         elif species == 'spruce':
             for k in range(r):
-                ln_d[k] = p[k,0] +  np.log(d50) * p[k,1] + np.log(age) * p[k,2] \
-                    + np.log(age/(G+EPS)) * p[k,3] + np.log(G) * p[k,4] + soil * p[k,5]
+                ln_d[k] = p[k,0] +  np.log(d50+EPS) * p[k,1] + np.log(age + EPS) * p[k,2] \
+                    + np.log((age + EPS)/(G+EPS)) * p[k,3] + np.log(G+EPS) * p[k,4] + soil * p[k,5]
                     
         d = np.exp(ln_d)
         
