@@ -18,24 +18,61 @@ nodata = 32765.
 #folder = r'D:\mVMI\2019'
 
 #tiffs = glob.glob( r'D:/mVMI/2019/*.tif')
+files = {
+        'maintype': r'D:/mVMI/2019\\paatyyppi_vmi1x_1519_M4.tif',
+        'sitetype': r'D:/mVMI/2019\\kasvupaikka_vmi1x_1519_M4.tif',
+        'age': r'D:/mVMI/2019\\ika_vmi1x_1519_M4.tif',
+        'ba': r'D:/mVMI/2019\\ppa_vmi1x_1519_M4.tif',
+        'd50': r'D:/mVMI/2019\\keskilapimitta_vmi1x_1519_M4.tif',
+        'height': r'D:/mVMI/2019\\keskipituus_vmi1x_1519_M4.tif',
+        'vol': r'D:/mVMI/2019\\tilavuus_vmi1x_1519_M4.tif',
+        'vol_p': r'D:/mVMI/2019\\manty_vmi1x_1519_M4.tif',
+        'vol_s': r'D:/mVMI/2019\\kuusi_vmi1x_1519_M4.tif',
+        'fol_p': r'D:/mVMI/2019\\bm_manty_neulaset_vmi1x_1519_M4.tif',
+        'fol_s': r'D:/mVMI/2019\\bm_kuusi_neulaset_vmi1x_1519_M4.tif',
+        'fol_d': r'D:/mVMI/2019\\bm_lehtip_neulaset_vmi1x_1519_M4.tif'
+        }
 
-def sample_mNFI(maintype=1, sitetype=4, species=('p', 0.9)):
+
+def load_mNFI_rasters(variables: list):
+    """ 
+    load mNFI raster tiles
+    Args:
+        variable - list of str according to mNFI variable names
+    Returns:
+        dictionary
+    """
+    raw = {v: [] for v in variables}
     
+    for v in raw.keys():
+        src = rasterio.open(files[v])
+        data = src.read(1).astype(float)
+        src.close()
+        raw[v] = data
+
+    return raw
+
+def sample_mNFI(maintype=None, sitetype=None, species=('p', 0.9)):
+    """
+    maintype: 1 = mineral soils, 2 = peatlands
+    sitetype: 
+    """
     files = {
-            'maintype': r'E:/mVMI/2019\\paatyyppi_vmi1x_1519_M4.tif',
-            'sitetype': r'E:/mVMI/2019\\kasvupaikka_vmi1x_1519_M4.tif',
-            'age': r'E:/mVMI/2019\\ika_vmi1x_1519_M4.tif',
-            'ba': r'E:/mVMI/2019\\ppa_vmi1x_1519_M4.tif',
-            'd50': r'E:/mVMI/2019\\keskilapimitta_vmi1x_1519_M4.tif',
-            'height': r'E:/mVMI/2019\\keskipituus_vmi1x_1519_M4.tif',
-            'vol': r'E:/mVMI/2019\\tilavuus_vmi1x_1519_M4.tif',
-            'vol_p': r'E:/mVMI/2019\\manty_vmi1x_1519_M4.tif',
-            'vol_s': r'E:/mVMI/2019\\kuusi_vmi1x_1519_M4.tif',
-            'fol_p': r'E:/mVMI/2019\\bm_manty_neulaset_vmi1x_1519_M4.tif',
-            'fol_s': r'E:/mVMI/2019\\bm_kuusi_neulaset_vmi1x_1519_M4.tif',
-            'fol_d': r'E:/mVMI/2019\\bm_lehtip_neulaset_vmi1x_1519_M4.tif'
+            'maintype': r'D:/mVMI/2019\\paatyyppi_vmi1x_1519_M4.tif',
+            'sitetype': r'D:/mVMI/2019\\kasvupaikka_vmi1x_1519_M4.tif',
+            'age': r'D:/mVMI/2019\\ika_vmi1x_1519_M4.tif',
+            'ba': r'D:/mVMI/2019\\ppa_vmi1x_1519_M4.tif',
+            'd50': r'D:/mVMI/2019\\keskilapimitta_vmi1x_1519_M4.tif',
+            'height': r'D:/mVMI/2019\\keskipituus_vmi1x_1519_M4.tif',
+            'vol': r'D:/mVMI/2019\\tilavuus_vmi1x_1519_M4.tif',
+            'vol_p': r'D:/mVMI/2019\\manty_vmi1x_1519_M4.tif',
+            'vol_s': r'D:/mVMI/2019\\kuusi_vmi1x_1519_M4.tif',
+            'fol_p': r'D:/mVMI/2019\\bm_manty_neulaset_vmi1x_1519_M4.tif',
+            'fol_s': r'D:/mVMI/2019\\bm_kuusi_neulaset_vmi1x_1519_M4.tif',
+            'fol_d': r'D:/mVMI/2019\\bm_lehtip_neulaset_vmi1x_1519_M4.tif'
             }
     
+    bm_unit_conv = 10.0 # biomasses given in units 10kg ha-1
     raw = {k: [] for k in files.keys()}
     
     for k, fname in files.items():
@@ -48,22 +85,28 @@ def sample_mNFI(maintype=1, sitetype=4, species=('p', 0.9)):
     # resample
     if species[0] == 'pine':   
         f = raw['vol_p'] / (raw['vol'] + 1.0)
-        raw['fol'] = raw['fol_p']
+        raw['fol'] = bm_unit_conv * raw['fol_p']
         raw['f_vol'] = f
         del raw['vol_s'], raw['fol_s'], raw['fol_d'], raw['fol_p']
         
     elif species[0] == 'spruce':
         f = raw['vol_s'] / (raw['vol'] + 1.0)
         raw['f_vol'] = f
-        raw['fol'] = raw['fol_s']
+        raw['fol'] = bm_unit_conv * raw['fol_s']
         del raw['vol_p'],  raw['fol_s'], raw['fol_d'], raw['fol_p']
-    else:
+    else: # deciduous
         f = (raw['vol'] - raw['vol_p'] - raw['vol_s']) /  (raw['vol'] + 1.0)
         raw['f_vol'] = f
-        raw['fol'] = raw['fol_d']
+        raw['fol'] = bm_unit_conv * raw['fol_d']
         del raw['vol_p'], raw['vol_s'],  raw['fol_s'], raw['fol_d'], raw['fol_p']
-        
-    mask = np.where((raw['maintype'] == maintype) & (raw['sitetype'] == sitetype) & (f > species[1]))
+
+
+    if sitetype:    
+        mask = np.where((raw['maintype'] == maintype) & (raw['sitetype'] == sitetype) & (f > species[1]))
+    elif maintype:
+        mask = np.where((raw['maintype'] == maintype) & (f > species[1]))
+    else:
+        mask = np.where((f > species[1]))
 
     for k, v in raw.items():
         raw[k] = v[mask]
